@@ -1,6 +1,34 @@
 ## Nsync
 Skill assessment platform
 
+**Setup**
+
+```sudo apt install python3-virtualenv```
+
+```virtualenv venv```
+
+```source venv/bin/activate```
+
+```pip install -r requirements.txt```
+
+```sudo apt-get install libpq-dev postgresql postgresql-contrib```
+
+```sudo su - postgres```
+
+```psql```
+
+```create database nsync_dev_db;```
+
+```create user nsync_admin with password 'we_believe_in_quality_over_quantity';```
+
+```alter role nsync_admin set client_encoding to 'utf8';```
+
+```ALTER ROLE nsync_admin SET default_transaction_isolation TO 'read committed';```
+
+```alter role nsync_admin set timezone to 'Asia/Kolkata';```
+
+```GRANT ALL PRIVILEGES ON DATABASE nsync_dev_db to nsync_admin;```
+
 **API**
 
 ***Login and Signup***
